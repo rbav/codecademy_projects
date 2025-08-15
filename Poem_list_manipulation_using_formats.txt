@@ -1,0 +1,53 @@
+#String manipulation using formatting methods
+#This program takes a list of "highlighted_poems" and sorts into a properly formatted list
+#Code by NOVA_TAGO
+
+#This is the original list provided
+highlighted_poems = "Afterimages:Audre Lorde:1997,  The Shadow:William Carlos Williams:1915, Ecstasy:Gabriela Mistral:1925,   Georgia Dusk:Jean Toomer:1923,   Parting Before Daybreak:An Qi:2014, The Untold Want:Walt Whitman:1871, Mr. Grumpledump's Song:Shel Silverstein:2004, Angel Sound Mexico City:Carmen Boullosa:2013, In Love:Kamala Suraiyya:1965, Dream Variations:Langston Hughes:1994, Dreamwood:Adrienne Rich:1987"
+
+#Uncomment to see original data output
+#print(highlighted_poems)
+
+#the following code splits the list to convert it from a single string into a list of strings
+#the splot is made at commas due to string
+highlighted_poems_list = highlighted_poems.split(",")
+
+#Uncomment to see output from above code
+#print(highlighted_poems_list)
+
+#Creates an empty list for code below
+highlighted_poems_stripped = []
+
+#This for loop takes the newly split list and removes the awkward spacing created by the above code
+for poem in highlighted_poems_list:
+  highlighted_poems_stripped.append(poem.strip())
+
+#This code checks output
+#print(highlighted_poems_stripped)
+
+#creates an empty list for the code below 
+highlighted_poems_details = []
+
+#Goes through the highlighted_poems_stripped list and splits in into a 2D list that has entries split into the title, author, and date.
+#These were delimited at the : symbols due to how they were presented
+for poem in highlighted_poems_stripped:
+  highlighted_poems_details.append(poem.split(":"))
+
+#print(highlighted_poems_details)
+
+#creates three empty lists for code below
+titles = []
+poets = []
+dates = []
+
+#goes through the 2D list "highlighted_poems_details" and splits the list into three sparate lists baised on index within the 2D list
+for poem in highlighted_poems_details:
+  titles.append(poem[0])
+  poets.append(poem[1])
+  dates.append(poem[2])
+
+#using a for loop that utilizes the .format() to print out the string for each poem
+#dont forget range(0,length) to make sure to include stuff at position 0
+for i in range(0,len(highlighted_poems_details)):
+    print("The poem {} was published by {} in {}".format(titles[i], poets[i], dates[i]))
+    

@@ -1,0 +1,34 @@
+##Code by NOVA TAGO
+## The following program allows manipulation of lists using various python commands
+
+## below is the list called "inventory"
+inventory = ["twin bed", "twin bed", "headboard", "queen bed", "king bed", "dresser", "dresser", "table", "table", "nightstand", "nightstand", "king bed", "king bed", "twin bed", "twin bed", "sheets", "sheets", "pillow", "pillow"]
+
+#creates a variable and records the number of entries from the list "inventory"
+inventory_len = len(inventory)
+
+#creates a variable "first" stores the first entry from the list above
+first = inventory[0]
+
+#creates a variable "last" stores the last entry from the list above using negative counting method
+last = inventory[-1]
+
+#creates a variable list which stores the first three entries
+first_3 = inventory[0:3]
+
+#creates a variable "twin_beds" and counts how many times the term "twin bed" appears in the above list
+twin_beds = inventory.count("twin bed")
+
+# creates a variable called "removed_item" and records the 5th entry in the list above then removes it from the list using the .pop command
+removed_item = inventory[4]
+inventory.pop(4)
+
+#creates a variable called "inventory_2_6 and records the entries between 3 and 6"
+inventory_2_6 = inventory[2:6]
+
+#adds the "19th..." entry to the 10ths position
+inventory.insert(10, "19th Century Bed Frame")
+
+#sorts the list "inventory" alphabetically
+inventory.sort()
+print(inventory)
